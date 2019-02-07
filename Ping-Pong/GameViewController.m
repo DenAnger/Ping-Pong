@@ -192,17 +192,17 @@
     if (_speed > 10) _speed = 10;
 }
 
-- (void)animate {
-    _ball.center = CGPointMake(_ball.center.x + _dx*_speed, _ball.center.y + _dy*_speed);
-    [self checkCollision:CGRectMake(0, 0, 20, SCREEN_HEIGHT) X:fabs(_dx) Y:0];
-    [self checkCollision:CGRectMake(SCREEN_WIDTH, 0, 20, SCREEN_HEIGHT) X:-fabs(_dx) Y:0];
-    if ([self checkCollision:_paddleTop.frame X:(_ball.center.x - _paddleTop.center.x) / 32.0 Y:1]) {
-        [self increaseSpeed];
-    }
-    if ([self checkCollision:_paddleBottom.frame X:(_ball.center.x - _paddleBottom.center.x) / 32.0 Y:-1]) {
-        [self increaseSpeed];
-    }
-    [self goal];
+- (void)newGame {
+    [self reset];
+    _scoreTop.text = @"0";
+    _scoreBottom.text = @"0";
+    [self displayMessage:@"Get Ready?"];
+}
+
+- (int)gameOver {
+    if ([_scoreTop.text intValue] >= MAX_SCORE) return 1;
+    if ([_scoreBottom.text intValue] >= MAX_SCORE) return 2;
+    return 0;
 }
 
 - (BOOL)goal {
@@ -224,17 +224,17 @@
     return NO;
 }
 
-- (void)newGame {
-    [self reset];
-    _scoreTop.text = @"0";
-    _scoreBottom.text = @"0";
-    [self displayMessage:@"Get Ready?"];
-}
-
-- (int)gameOver {
-    if ([_scoreTop.text intValue] >= MAX_SCORE) return 1;
-    if ([_scoreBottom.text intValue] >= MAX_SCORE) return 2;
-    return 0;
+- (void)animate {
+    _ball.center = CGPointMake(_ball.center.x + _dx*_speed, _ball.center.y + _dy*_speed);
+    [self checkCollision:CGRectMake(0, 0, 20, SCREEN_HEIGHT) X:fabs(_dx) Y:0];
+    [self checkCollision:CGRectMake(SCREEN_WIDTH, 0, 20, SCREEN_HEIGHT) X:-fabs(_dx) Y:0];
+    if ([self checkCollision:_paddleTop.frame X:(_ball.center.x - _paddleTop.center.x) / 32.0 Y:1]) {
+        [self increaseSpeed];
+    }
+    if ([self checkCollision:_paddleBottom.frame X:(_ball.center.x - _paddleBottom.center.x) / 32.0 Y:-1]) {
+        [self increaseSpeed];
+    }
+    [self goal];
 }
 
 // Использование методов жизненного цикла
