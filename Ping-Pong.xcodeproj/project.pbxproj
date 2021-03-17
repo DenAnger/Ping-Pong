@@ -58,17 +58,41 @@
 		6908229D2205649C00C996CB /* Ping-Pong */ = {
 			isa = PBXGroup;
 			children = (
-				6908229E2205649C00C996CB /* AppDelegate.h */,
-				6908229F2205649C00C996CB /* AppDelegate.m */,
-				690822A12205649C00C996CB /* GameViewController.h */,
-				690822A22205649C00C996CB /* GameViewController.m */,
-				690822A42205649C00C996CB /* Main.storyboard */,
-				690822A72205649E00C996CB /* Assets.xcassets */,
-				690822A92205649E00C996CB /* LaunchScreen.storyboard */,
-				690822AC2205649E00C996CB /* Info.plist */,
-				690822AD2205649E00C996CB /* main.m */,
+				6971FBDB260263FF002C2BBD /* View */,
+				6971FBDA260263DC002C2BBD /* Controllers */,
+				6971FBD8260263A9002C2BBD /* Supports */,
 			);
 			path = "Ping-Pong";
+			sourceTree = "<group>";
+		};
+		6971FBD8260263A9002C2BBD /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				6908229E2205649C00C996CB /* AppDelegate.h */,
+				6908229F2205649C00C996CB /* AppDelegate.m */,
+				690822A72205649E00C996CB /* Assets.xcassets */,
+				690822A92205649E00C996CB /* LaunchScreen.storyboard */,
+				690822AD2205649E00C996CB /* main.m */,
+				690822AC2205649E00C996CB /* Info.plist */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		6971FBDA260263DC002C2BBD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				690822A12205649C00C996CB /* GameViewController.h */,
+				690822A22205649C00C996CB /* GameViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6971FBDB260263FF002C2BBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				690822A42205649C00C996CB /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,7 +121,7 @@
 		690822932205649B00C996CB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Denis Abramov";
 				TargetAttributes = {
 					6908229A2205649B00C996CB = {
@@ -195,6 +219,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -254,6 +279,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -287,7 +313,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJN9TW8RPS;
-				INFOPLIST_FILE = "Ping-Pong/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Ping-Pong/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJN9TW8RPS;
-				INFOPLIST_FILE = "Ping-Pong/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Ping-Pong/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
